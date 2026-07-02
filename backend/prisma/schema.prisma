@@ -18,3 +18,9 @@ model Todo{
   name String
   task String
 }
+
+model User{
+  id Int @default(autoincrement()) @id
+  username String
+  password String
+}

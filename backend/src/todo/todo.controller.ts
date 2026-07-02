@@ -19,7 +19,7 @@ export class TodoController {
     }
 
     @Get('/:id')
-    getTodo(@Param('id') id: String): Promise<Todo | null> {
+    getTodo(@Param('id') id: string): Promise<Todo | null> {
         return this.todoService.todo({
             where: { id: +id }
         })
@@ -31,7 +31,7 @@ export class TodoController {
     }
 
     @Put('/update/:id')
-    updateTodo(@Param('id') id: String, @Body() updateTodo: UpdateTodoDto): Promise<Todo> {
+    updateTodo(@Param('id') id: string, @Body() updateTodo: UpdateTodoDto): Promise<Todo> {
         return this.todoService.updateTodo({
             where: { id: +id },
             data: updateTodo
@@ -39,7 +39,7 @@ export class TodoController {
     }
 
     @Delete('/delete/:id')
-    deleteTodo(@Param('id') id: String): Promise<Todo> {
+    deleteTodo(@Param('id') id: string): Promise<Todo> {
         return this.todoService.deleteTodo({ id: +id })
     }
 }
